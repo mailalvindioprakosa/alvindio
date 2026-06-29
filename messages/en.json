@@ -1,0 +1,191 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "demo": "Demo Website",
+    "domain": "Check Domain",
+    "contact": "Contact",
+    "cta": "Request Quote",
+    "layanan_1": "Landing Page Website",
+    "layanan_2": "UMKM Website",
+    "layanan_2_badge": "Popular",
+    "layanan_3": "Business Website",
+    "layanan_3_badge": "Popular",
+    "layanan_4": "Basic SEO Maintenance",
+    "layanan_5": "Google Ads",
+    "layanan_5_badge": "New",
+    "layanan_6": "Premium Maintenance + Ads"
+  },
+  "hero": {
+    "welcome": "Welcome to Saraya Web Design & SEO",
+    "heading": "Professional Website Creation Services for Your Business.",
+    "subtext": "Your website is the face of your business in the digital world. Let's build the best image for your business together with Saraya.",
+    "trust": "TRUSTED BY 100+ BUSINESSES IN INDONESIA",
+    "cta": "Contact Us"
+  },
+  "domain": {
+    "label": "Find Your Dream Domain",
+    "heading": "Check Your Dream Domain Now!",
+    "placeholder": "Example: yourbusiness",
+    "button": "Check Now"
+  },
+  "pricing": {
+    "label": "Website Packages",
+    "heading": "Choose the Package That Fits Your Needs",
+    "subtext": "We provide various website creation price packages to meet all your needs. All packages already include domain, hosting, and custom design.",
+    "per_year": "/ year",
+    "renewal": "Renewal fee",
+    "select": "Choose Package",
+    "popular": "Most Popular",
+    "note": "*Free domain list: .com, .net, .org, .info, .id, .sch.id, .or.id, .ac.id, .web.id, .xyz",
+    "packages": [
+      {
+        "name": "Landing Page",
+        "original": "IDR 1,999,000",
+        "price": "IDR 1,499,000",
+        "renewal_cost": "499k/year",
+        "features": [
+          "Free Domain & Hosting",
+          "1 complete & responsive page",
+          "1 Professional Email",
+          "1x Design Revision",
+          "1-3 day completion time",
+          "Basic SEO & Google Business",
+          "Monthly Report",
+          "AI Content Assistant"
+        ]
+      },
+      {
+        "name": "UMKM",
+        "original": "IDR 3,999,000",
+        "price": "IDR 2,999,000",
+        "renewal_cost": "999k/year",
+        "features": [
+          "Free Domain & Hosting",
+          "5 complete & responsive pages",
+          "10 Professional Emails",
+          "1x Design Revision",
+          "3-6 day completion time",
+          "Basic SEO & Google Business",
+          "Monthly Report",
+          "AI Content Assistant"
+        ]
+      },
+      {
+        "name": "Business",
+        "original": "IDR 6,999,000",
+        "price": "IDR 5,999,000",
+        "renewal_cost": "1,499k/year",
+        "features": [
+          "Free Domain & Hosting",
+          "15 complete & responsive pages",
+          "Unlimited Professional Emails",
+          "2x Design Revisions",
+          "9-14 day completion time",
+          "Basic SEO & Google Business",
+          "Monthly Report",
+          "AI Content Assistant Essential"
+        ]
+      }
+    ]
+  },
+  "portfolio": {
+    "label": "Portfolio",
+    "heading": "Our Work",
+    "subtext": "Experience delivering hundreds of website projects with the best quality for every client."
+  },
+  "cta_banner": {
+    "label": "Build Your Digital Business With Saraya",
+    "heading": "Strategic Steps Toward Your Business Growth",
+    "subtext": "We provide digital solutions and services designed to optimize operations, increase productivity, and help your business grow faster and stronger.",
+    "button": "Contact Us"
+  },
+  "why_us": {
+    "label": "Why Saraya Website?",
+    "heading": "Why Should You Choose Saraya Website?",
+    "subtext": "Saraya Website has been trusted as a reliable business partner for entrepreneurs. We will build a modern website so your business is easier to reach.",
+    "features": [
+      { "title": "Modern Design" },
+      { "title": "SEO Friendly" },
+      { "title": "Competitive Pricing" },
+      { "title": "Responsive Website" },
+      { "title": "Lifetime Warranty" },
+      { "title": "Free Consultation" },
+      { "title": "Fast Delivery" },
+      { "title": "Support Service" }
+    ]
+  },
+  "testimonial": {
+    "label": "Testimonial",
+    "heading": "What Do They Say?",
+    "subtext": "Here are testimonials from Saraya's customers.",
+    "items": [
+      {
+        "name": "Ozzie Lenka",
+        "role": "Owner. Lenka Desain9",
+        "text": "Recommended for those who are just starting a business and want to have a website, the price can be adjusted to your needs and you are guided to manage the website until you can do it yourself."
+      },
+      {
+        "name": "Syahrul Gunawan",
+        "role": "IT Staff, Dinas Arpusda Provinsi Jawa Tengah",
+        "text": "Thank you to the Saraya team who completed the arpusda.jatengprov.go.id website very well. The design is modern, features are complete, and easy to access. Communication is fast and the results met our expectations. We are satisfied and recommend Saraya as a trusted website creation partner."
+      },
+      {
+        "name": "Saraya Customer",
+        "role": "Business Owner",
+        "text": "Saraya Website's service is very satisfying. A professional, responsive team, always ready to help. The website created looks professional and suits my business needs. Highly recommended!"
+      }
+    ]
+  },
+  "faq": {
+    "heading": "Still Have Questions?",
+    "subheading": "We Answer Here.",
+    "subtext": "If you still have other questions, don't hesitate to contact us.",
+    "items": [
+      {
+        "q": "Why do I need a website for my business?",
+        "a": "A website allows you to convey information about your products, services and increase the visibility of your business globally, active 24 hours a day."
+      },
+      {
+        "q": "How much does it cost to create a website?",
+        "a": "Website prices start from 1.1 million rupiah depending on your website needs."
+      },
+      {
+        "q": "How long does it take to build the website?",
+        "a": "Website creation takes 3-5 working days, the work is adjusted to the complexity of the website you order."
+      },
+      {
+        "q": "Is there a warranty after the website is done?",
+        "a": "Yes, we provide a lifetime warranty for every website we create. We also provide periodic maintenance and support services to ensure your website always runs well."
+      }
+    ]
+  },
+  "cta_bottom": {
+    "label": "Trust Saraya Website",
+    "heading": "Contact Us Right Now",
+    "subtext": "Create your dream website with us and experience the quality difference we provide.",
+    "button": "Get Started"
+  },
+  "footer": {
+    "desc": "Professional, Trusted, and Experienced Website Creation Services in Indonesia.",
+    "copyright": "COPYRIGHT © 2026 SARAYA WEBSITE",
+    "social_title": "FOLLOW US",
+    "menu_title": "MENU",
+    "services_title": "SERVICES",
+    "contact_title": "CONTACT",
+    "address": "Gajah Mungkur, Semarang",
+    "email": "halo@saraya.website",
+    "phone": "+62-851-1725-7892",
+    "menu_links": ["BERANDA", "LAYANAN", "PORTFOLIO", "DEMO WEBSITE", "CEK DOMAIN", "KONTAK"],
+    "services": [
+      "WEBSITE LANDING PAGE",
+      "WEBSITE UKM",
+      "WEBSITE BISNIS",
+      "AI CONTENT ASSISTANT",
+      "OPTIMASI SEO WEBSITE",
+      "PEMASANGAN IKLAN GOOGLE ADS"
+    ],
+    "cities": "Semarang · Bekasi · Depok · Jakarta · Jepara · Magelang · Purwokerto · Solo · Tangerang · Wonosobo · Bali · Surabaya · Palembang · Medan · Aceh · Padang · Pekanbaru · Jambi · Yogyakarta"
+  }
+}

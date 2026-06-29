@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap");
+@import "tailwindcss";
+
+:root {
+  --primary: #480E6A;
+  --primary-dark: #200033;
+  --primary-hover: #5c1a82;
+  --light-bg: #F6F4F7;
+  --body-text: #554B4E;
+  --nav-text: #1D2B64;
+  --pink-accent: #E56F98;
+  --wa-green: #25D366;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: "Figtree", sans-serif;
+  color: var(--body-text);
+  background: #fff;
+}
