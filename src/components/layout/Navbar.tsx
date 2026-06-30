@@ -2,21 +2,38 @@
 
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { useTranslations, useLocale } from "next-intl";
 import { Menu, X, Globe, ChevronDown } from "lucide-react";
 import { useRouter, usePathname } from "next/navigation";
+import Logo from "@/components/Logo";
 
-export default function Navbar() {
+export type NavServiceItem = {
+  slug: string;
+  label: string;
+  href: string;
+  badge: string | null;
+};
+
+const DEFAULT_BADGE_COLOR = "#E53E3E";
+
+export default function Navbar({ services }: { services?: NavServiceItem[] } = {}) {
   const t = useTranslations("nav");
-  const layananItems = [
-    { label: t("layanan_1"), badge: null, badgeColor: undefined, href: "website-landing-page" },
-    { label: t("layanan_2"), badge: t("layanan_2_badge"), badgeColor: "#E53E3E", href: "website-ukm" },
-    { label: t("layanan_3"), badge: t("layanan_3_badge"), badgeColor: "#E53E3E", href: "website-bisnis" },
-    { label: t("layanan_4"), badge: null, badgeColor: undefined, href: "maintenance-seo-basic" },
-    { label: t("layanan_5"), badge: t("layanan_5_badge"), badgeColor: "#2D3748", href: "iklan-google-ads" },
-    { label: t("layanan_6"), badge: null, badgeColor: undefined, href: "maintenance-premium-iklan" },
-  ];
+  const layananItems = (services && services.length > 0
+    ? services
+    : [
+        { slug: "website-landing-page", label: t("layanan_1"), badge: null, href: "website-landing-page" },
+        { slug: "website-ukm", label: t("layanan_2"), badge: t("layanan_2_badge"), href: "website-ukm" },
+        { slug: "website-bisnis", label: t("layanan_3"), badge: t("layanan_3_badge"), href: "website-bisnis" },
+        { slug: "maintenance-seo-basic", label: t("layanan_4"), badge: null, href: "maintenance-seo-basic" },
+        { slug: "iklan-google-ads", label: t("layanan_5"), badge: t("layanan_5_badge"), href: "iklan-google-ads" },
+        { slug: "maintenance-premium-iklan", label: t("layanan_6"), badge: null, href: "maintenance-premium-iklan" },
+      ]
+  ).map((it) => ({
+    label: it.label,
+    badge: it.badge,
+    badgeColor: DEFAULT_BADGE_COLOR,
+    href: it.href.replace(/^\//, ""),
+  }));
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
@@ -54,16 +71,8 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href={`/${locale}`} className="flex items-center">
-            <Image
-              src="https://saraya.website/wp-content/uploads/2025/06/Untitled-design-18-2.png"
-              alt="Logo Saraya Web"
-              width={120}
-              height={40}
-              className="object-contain h-10 w-auto"
-              priority
-              unoptimized
-            />
+          <Link href={`/${locale}`} className="flex items-center" aria-label="Alvin Dio Prakosa">
+            <Logo size="md" />
           </Link>
 
           {/* Desktop Nav */}

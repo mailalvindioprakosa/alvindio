@@ -7,9 +7,10 @@ import { ChevronDown } from "lucide-react";
 
 interface FAQItem { q: string; a: string }
 
-export default function FAQ() {
+export default function FAQ({ items: dbItems }: { items?: FAQItem[] }) {
   const t = useTranslations("faq");
-  const items: FAQItem[] = t.raw("items") as FAQItem[];
+  const fallback: FAQItem[] = t.raw("items") as FAQItem[];
+  const items: FAQItem[] = dbItems && dbItems.length > 0 ? dbItems : fallback;
   const [open, setOpen] = useState<number | null>(null);
 
   return (

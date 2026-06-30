@@ -1,17 +1,25 @@
 import { useTranslations } from "next-intl";
 import { Check } from "lucide-react";
 
+type FeatureItem = string | { label: string; available: boolean };
+
 interface Package {
   name: string;
   original: string;
   price: string;
   renewal_cost: string;
-  features: string[];
+  features: FeatureItem[];
+  is_highlighted?: boolean;
 }
 
-export default function Pricing() {
+function featureLabel(f: FeatureItem): string {
+  return typeof f === "string" ? f : f.label;
+}
+
+export default function Pricing({ packages: dbPackages }: { packages?: Package[] }) {
   const t = useTranslations("pricing");
-  const packages: Package[] = t.raw("packages") as Package[];
+  const fallback: Package[] = t.raw("packages") as Package[];
+  const packages: Package[] = dbPackages && dbPackages.length > 0 ? dbPackages : fallback;
 
   return (
     <section id="layanan" className="py-20 bg-white">
@@ -30,7 +38,7 @@ export default function Pricing() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {packages.map((pkg, i) => {
-            const isPopular = i === 1;
+            const isPopular = pkg.is_highlighted ?? i === 1;
             return (
               <div
                 key={pkg.name}
@@ -87,7 +95,7 @@ export default function Pricing() {
                         style={{ color: isPopular ? "#E56F98" : "#480E6A" }}
                       />
                       <span style={{ color: isPopular ? "rgba(255,255,255,0.9)" : "#554B4E" }}>
-                        {f}
+                        {featureLabel(f)}
                       </span>
                     </li>
                   ))}

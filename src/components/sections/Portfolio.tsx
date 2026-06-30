@@ -1,6 +1,8 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
+interface PortfolioItem { src: string; alt: string; url?: string | null }
+
 const PORTFOLIOS = [
   { src: "https://saraya.website/wp-content/uploads/2025/12/Featured-Image-SRY-12-1.webp", alt: "Saraya Featured" },
   { src: "https://saraya.website/wp-content/uploads/2024/10/lesstechnology.png", alt: "Less Technology" },
@@ -19,8 +21,9 @@ const PORTFOLIOS = [
   { src: "https://saraya.website/wp-content/uploads/2024/08/Wolu-EO.webp", alt: "Wolu EO" },
 ];
 
-export default function Portfolio() {
+export default function Portfolio({ items }: { items?: PortfolioItem[] }) {
   const t = useTranslations("portfolio");
+  const portfolios: PortfolioItem[] = items && items.length > 0 ? items : PORTFOLIOS;
 
   return (
     <section id="portofolio" className="py-20 bg-white">
@@ -38,7 +41,7 @@ export default function Portfolio() {
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-          {PORTFOLIOS.map((p, i) => (
+          {portfolios.map((p, i) => (
             <div
               key={i}
               className="group relative overflow-hidden rounded-xl transition-all duration-300 cursor-pointer bg-white"

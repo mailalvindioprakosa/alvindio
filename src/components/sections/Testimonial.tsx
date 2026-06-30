@@ -2,7 +2,7 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { Star } from "lucide-react";
 
-interface TestItem { name: string; role: string; text: string }
+interface TestItem { name: string; role: string; text: string; avatar?: string | null }
 
 const AVATARS = [
   "https://saraya.website/wp-content/uploads/2025/06/unnamed.png",
@@ -10,9 +10,10 @@ const AVATARS = [
   "https://saraya.website/wp-content/uploads/2025/06/ChatGPT-Image-16-Jun-2025-15.08.49-1.webp",
 ];
 
-export default function Testimonial() {
+export default function Testimonial({ items: dbItems }: { items?: TestItem[] }) {
   const t = useTranslations("testimonial");
-  const items: TestItem[] = t.raw("items") as TestItem[];
+  const fallback: TestItem[] = t.raw("items") as TestItem[];
+  const items: TestItem[] = dbItems && dbItems.length > 0 ? dbItems : fallback;
 
   return (
     <section className="py-20 bg-white">
@@ -41,7 +42,7 @@ export default function Testimonial() {
               </p>
               <div className="flex items-center gap-3">
                 <Image
-                  src={AVATARS[i]}
+                  src={item.avatar || AVATARS[i % AVATARS.length]}
                   alt={item.name}
                   width={40}
                   height={40}

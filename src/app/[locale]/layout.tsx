@@ -3,11 +3,12 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+import ChatWidget from "@/components/ChatWidget";
 
 export const metadata: Metadata = {
-  title: "Saraya Website | Jasa Pembuatan Website Profesional",
+  title: "Alvin Dio Prakosa | Jasa Pembuatan Website Profesional",
   description:
-    "Saraya Web Design & SEO - Jasa Pembuatan Website Profesional untuk Bisnis Anda.",
+    "Alvin Dio Prakosa - Jasa Pembuatan Website Profesional untuk Bisnis Anda.",
 };
 
 export default async function LocaleLayout({
@@ -25,6 +26,7 @@ export default async function LocaleLayout({
   return (
     <NextIntlClientProvider messages={messages}>
       {children}
+      <ChatWidget />
     </NextIntlClientProvider>
   );
 }

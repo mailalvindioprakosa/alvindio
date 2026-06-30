@@ -1,7 +1,7 @@
 "use client";
-import Image from "next/image";
 import { useTranslations, useLocale } from "next-intl";
 import { Mail, Phone, MapPin } from "lucide-react";
+import Logo from "@/components/Logo";
 
 export default function Footer() {
   const t = useTranslations("footer");
@@ -26,14 +26,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div>
-            <Image
-              src="https://saraya.website/wp-content/uploads/2025/06/Untitled-design-18-2.png"
-              alt="Logo Saraya Web"
-              width={130}
-              height={44}
-              className="object-contain mb-4"
-              unoptimized
-            />
+            <div className="mb-4">
+              <Logo size="md" />
+            </div>
             <p className="text-xs leading-relaxed mb-5" style={{ color: "#554B4E" }}>
               {t("desc")}
             </p>

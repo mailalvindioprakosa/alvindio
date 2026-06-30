@@ -82,8 +82,16 @@ function LogoSlider() {
   );
 }
 
-export default function Hero() {
+interface HeroContent { welcome: string; heading: string; subtext: string }
+
+const FALLBACK_HERO_IMAGE = "https://saraya.website/wp-content/uploads/2026/02/Hero-images.png";
+
+export default function Hero({ content, image }: { content?: HeroContent | null; image?: string }) {
   const t = useTranslations("hero");
+  const welcome = content?.welcome || t("welcome");
+  const heading = content?.heading || t("heading");
+  const subtext = content?.subtext || t("subtext");
+  const heroImage = image || FALLBACK_HERO_IMAGE;
 
   return (
     <section
@@ -98,19 +106,19 @@ export default function Hero() {
               className="text-sm font-semibold mb-4 uppercase tracking-wide"
               style={{ color: "#480E6A" }}
             >
-              {t("welcome")}
+              {welcome}
             </p>
             <h1
               className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight mb-5"
               style={{ color: "#1D2B64" }}
             >
-              {t("heading")}
+              {heading}
             </h1>
             <p
               className="text-base leading-relaxed mb-5"
               style={{ color: "#554B4E" }}
             >
-              {t("subtext")}
+              {subtext}
             </p>
 
             <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "#554B4E" }}>
@@ -136,7 +144,7 @@ export default function Hero() {
           {/* Right — Hero illustration */}
           <div className="flex-1 flex justify-center lg:justify-end">
             <Image
-              src="https://saraya.website/wp-content/uploads/2026/02/Hero-images.png"
+              src={heroImage}
               alt="Hero illustration"
               width={580}
               height={480}

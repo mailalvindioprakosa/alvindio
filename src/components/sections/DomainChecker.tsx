@@ -5,8 +5,11 @@ import { useTranslations } from "next-intl";
 
 const EXTENSIONS = [".com", ".net", ".org", ".info", ".eu", ".de", ".uk", ".nl", ".br", ".fr", ".it", ".ca", ".pl"];
 
-export default function DomainChecker() {
+interface DomainContent { label: string; heading: string; placeholder: string; button: string }
+
+export default function DomainChecker({ content }: { content?: DomainContent }) {
   const t = useTranslations("domain");
+  const f = (key: keyof DomainContent) => content?.[key] || t(key);
   const [domain, setDomain] = useState("");
 
   const handleCheck = () => {
@@ -19,10 +22,10 @@ export default function DomainChecker() {
     <section id="domain" className="py-14" style={{ backgroundColor: "#F6F4F7" }}>
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#480E6A" }}>
-          {t("label")}
+          {f("label")}
         </p>
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold mb-6" style={{ color: "#1D2B64" }}>
-          {t("heading")}
+          {f("heading")}
         </h2>
 
         {/* Search box */}
@@ -35,7 +38,7 @@ export default function DomainChecker() {
             value={domain}
             onChange={(e) => setDomain(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && handleCheck()}
-            placeholder={t("placeholder")}
+            placeholder={f("placeholder")}
             className="flex-1 px-2 py-4 text-sm outline-none placeholder:text-gray-400"
             style={{ color: "#1D2B64" }}
           />
@@ -52,7 +55,7 @@ export default function DomainChecker() {
             className="text-white font-semibold px-6 py-4 text-sm transition-opacity hover:opacity-90 whitespace-nowrap"
             style={{ backgroundColor: "#480E6A" }}
           >
-            {t("button")}
+            {f("button")}
           </button>
         </div>
 
