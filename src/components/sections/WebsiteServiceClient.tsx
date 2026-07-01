@@ -4,8 +4,21 @@ import { useTranslations } from "next-intl";
 
 const WA = "https://wa.me/6285117257892";
 const BASE = "https://saraya.website/wp-content/uploads/";
-const PLACEHOLDER = "https://placehold.co/600x400/480E6A/ffffff?text=Image";
-const onErr = (e: React.SyntheticEvent<HTMLImageElement>) => { e.currentTarget.src = PLACEHOLDER; };
+
+export const DEFAULT_PROCESS_IMGS = [
+  "https://images.unsplash.com/photo-1531538606174-0f90ff5dce83?w=600&q=80",
+  "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&q=80",
+  "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&q=80",
+];
+export const DEFAULT_HERO_IMG = "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&q=80";
+export const DEFAULT_ABOUT_IMG = "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=700&q=80";
+export const DEFAULT_CTA_IMG = "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=500&q=80";
+export const DEFAULT_COCOK_IMG = "https://images.unsplash.com/photo-1553484771-047a44eee27a?w=600&q=80";
+
+const PLACEHOLDER = DEFAULT_HERO_IMG;
+const onErr = (e: React.SyntheticEvent<HTMLImageElement>) => {
+  if (e.currentTarget.src !== PLACEHOLDER) e.currentTarget.src = PLACEHOLDER;
+};
 
 const FALLBACK_TRUSTED_BY = [
   "2025/06/14.webp","2025/06/9.webp","2025/06/5-1.webp","2025/06/18.webp","2025/06/17.webp",
@@ -58,7 +71,7 @@ export default function WebsiteServiceClient({
 
   const COCOK = [0, 1, 2].map((i) => ({
     title: f(`cocok_${i}`),
-    img: cocokImages[i]?.url || PLACEHOLDER,
+    img: cocokImages[i]?.url || DEFAULT_COCOK_IMG,
   }));
 
   return (
@@ -249,7 +262,7 @@ export default function WebsiteServiceClient({
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {[0, 1, 2].map((i) => (
               <div key={i} className="rounded-2xl overflow-hidden border border-gray-100 shadow-sm bg-white">
-                <img src={BASE + ["2025/07/Diskusi-Website-Yang-Dibutuhkan.png", "2025/07/Perancangan-Website-Sesuai-Hasil-Diskusi.png", "2025/07/Website-Di-Kembangkan-hingga-siap-digunakan.png"][i]} alt={ts(`process_${i}`)} className="w-full aspect-video object-cover" loading="lazy" />
+                <img src={DEFAULT_PROCESS_IMGS[i]} alt={ts(`process_${i}`)} className="w-full aspect-video object-cover" loading="lazy" onError={onErr} />
                 <div className="p-5">
                   <span className="text-xs font-bold px-2 py-1 rounded text-white mb-3 inline-block" style={{ backgroundColor: "#480E6A" }}>0{i + 1}</span>
                   <h3 className="font-bold text-base mt-2" style={{ color: "#200033" }}>{ts(`process_${i}`)}</h3>

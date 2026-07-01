@@ -1,16 +1,13 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ServiceDetailClient from "@/components/sections/ServiceDetailClient";
+import { DEFAULT_HERO_IMG, DEFAULT_ABOUT_IMG, DEFAULT_PROCESS_IMGS } from "@/components/sections/WebsiteServiceClient";
 import { getPageFields, getFaqs, getNavServices, getPageImages } from "@/lib/content";
 
 const SLUG = "iklan-google-ads";
-const FALLBACK_HERO = "https://saraya.website/wp-content/uploads/2025/07/Hero-Iklan.png";
-const FALLBACK_ABOUT = "https://saraya.website/wp-content/uploads/2025/07/UMKM-About-1024x797.png";
-const FALLBACK_PROCESS = [
-  "https://saraya.website/wp-content/uploads/2025/07/Diskusi-Website-Yang-Dibutuhkan.png",
-  "https://saraya.website/wp-content/uploads/2025/07/Perancangan-Website-Sesuai-Hasil-Diskusi.png",
-  "https://saraya.website/wp-content/uploads/2025/07/Website-Di-Kembangkan-hingga-siap-digunakan.png",
-];
+const FALLBACK_HERO = DEFAULT_HERO_IMG;
+const FALLBACK_ABOUT = DEFAULT_ABOUT_IMG;
+const FALLBACK_PROCESS = DEFAULT_PROCESS_IMGS;
 
 export const dynamic = "force-dynamic";
 

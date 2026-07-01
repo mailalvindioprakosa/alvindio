@@ -2,10 +2,13 @@
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 
+import { DEFAULT_PROCESS_IMGS, DEFAULT_HERO_IMG, DEFAULT_ABOUT_IMG } from "./WebsiteServiceClient";
+
 const WA = "https://wa.me/6285117257892";
 const BASE = "https://saraya.website/wp-content/uploads/";
-const PLACEHOLDER = "https://placehold.co/600x400/480E6A/ffffff?text=Image";
-const onErr = (e: React.SyntheticEvent<HTMLImageElement>) => { e.currentTarget.src = PLACEHOLDER; };
+const onErr = (e: React.SyntheticEvent<HTMLImageElement>) => {
+  if (e.currentTarget.src !== DEFAULT_HERO_IMG) e.currentTarget.src = DEFAULT_HERO_IMG;
+};
 
 const FALLBACK_TRUSTED_BY = [
   "2025/06/14.webp","2025/06/9.webp","2025/06/5-1.webp","2025/06/18.webp","2025/06/17.webp",
@@ -49,7 +52,7 @@ export default function ServiceDetailClient({
     desc: ts(`why_${i}_desc`),
   }));
 
-  const PROCESS = processImages.map((img, i) => ({ img: img || PLACEHOLDER, title: f(`process_${i}`) }));
+  const PROCESS = processImages.map((img, i) => ({ img: img || DEFAULT_PROCESS_IMGS[i] || DEFAULT_HERO_IMG, title: f(`process_${i}`) }));
   const HERO_GALLERY = trustedByImages && trustedByImages.length > 0 ? trustedByImages : FALLBACK_TRUSTED_BY;
 
   return (

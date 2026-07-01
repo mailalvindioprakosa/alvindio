@@ -1,12 +1,12 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import WebsiteServiceClient from "@/components/sections/WebsiteServiceClient";
+import WebsiteServiceClient, { DEFAULT_HERO_IMG, DEFAULT_ABOUT_IMG, DEFAULT_CTA_IMG } from "@/components/sections/WebsiteServiceClient";
 import { getPageFields, getFaqs, getNavServices, getPageImages, getPortfolio } from "@/lib/content";
 
 const SLUG = "website-ukm";
-const FALLBACK_HERO = "https://saraya.website/wp-content/uploads/2025/07/Hero-UKM.png";
-const FALLBACK_ABOUT = "https://saraya.website/wp-content/uploads/2025/07/UMKM-About-1024x797.png";
-const FALLBACK_CTA = "https://saraya.website/wp-content/uploads/2026/02/cta-1.png";
+const FALLBACK_HERO = DEFAULT_HERO_IMG;
+const FALLBACK_ABOUT = DEFAULT_ABOUT_IMG;
+const FALLBACK_CTA = DEFAULT_CTA_IMG;
 
 export const dynamic = "force-dynamic";
 
