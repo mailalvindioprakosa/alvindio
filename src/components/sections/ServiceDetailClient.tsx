@@ -69,7 +69,7 @@ export default function ServiceDetailClient({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 items-center">
             <div className="hidden lg:flex lg:col-span-3 items-center justify-center bg-transparent">
-              <img src={heroImage} alt={f("hero_heading")} className="w-full max-w-lg drop-shadow-xl rounded-2xl" loading="eager" onError={onErr} />
+              <img src={heroImage} alt={f("hero_heading")} className="w-full max-w-lg drop-shadow-xl" loading="eager" onError={onErr} />
             </div>
             <div className="lg:col-span-2">
               <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight mb-5" style={{ color: "#200033" }}>

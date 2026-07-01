@@ -148,7 +148,7 @@ export default function Hero({ content, image }: { content?: HeroContent | null;
               alt="Hero illustration"
               width={580}
               height={480}
-              className="object-contain w-full max-w-sm lg:max-w-lg xl:max-w-xl rounded-2xl"
+              className="object-contain w-full max-w-sm lg:max-w-lg xl:max-w-xl"
               priority
               unoptimized
             />
