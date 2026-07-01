@@ -4,6 +4,8 @@ import { useTranslations } from "next-intl";
 
 const WA = "https://wa.me/6285117257892";
 const BASE = "https://saraya.website/wp-content/uploads/";
+const PLACEHOLDER = "https://placehold.co/600x400/480E6A/ffffff?text=Image";
+const onErr = (e: React.SyntheticEvent<HTMLImageElement>) => { e.currentTarget.src = PLACEHOLDER; };
 
 const FALLBACK_TRUSTED_BY = [
   "2025/06/14.webp","2025/06/9.webp","2025/06/5-1.webp","2025/06/18.webp","2025/06/17.webp",
@@ -56,7 +58,7 @@ export default function WebsiteServiceClient({
 
   const COCOK = [0, 1, 2].map((i) => ({
     title: f(`cocok_${i}`),
-    img: cocokImages[i]?.url ?? "",
+    img: cocokImages[i]?.url || PLACEHOLDER,
   }));
 
   return (
@@ -69,7 +71,7 @@ export default function WebsiteServiceClient({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 items-center">
             <div className="hidden lg:flex lg:col-span-3 items-center justify-center">
-              <img src={heroImage} alt={f("hero_heading")} className="w-full max-w-lg drop-shadow-xl" loading="eager" />
+              <img src={heroImage} alt={f("hero_heading")} className="w-full max-w-lg drop-shadow-xl" loading="eager" onError={onErr} />
             </div>
             <div className="lg:col-span-2">
               <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight mb-5" style={{ color: "#200033" }}>{f("hero_heading")}</h1>
@@ -118,7 +120,7 @@ export default function WebsiteServiceClient({
               )}
             </div>
             <div className="flex justify-center">
-              <img src={aboutImage} alt={f("about_heading")} className="max-w-full rounded-2xl shadow-lg" loading="lazy" />
+              <img src={aboutImage} alt={f("about_heading")} className="max-w-full rounded-2xl shadow-lg" loading="lazy" onError={onErr} />
             </div>
           </div>
         </div>
@@ -137,7 +139,7 @@ export default function WebsiteServiceClient({
                 <p className="text-base" style={{ color: "rgba(255,255,255,0.5)" }}>{f("metric_journey")}</p>
               </div>
               <div className="flex justify-center lg:justify-end">
-                <img src={heroImage} alt={f("metric_title")} className="max-w-full max-w-sm" loading="lazy" />
+                <img src={heroImage} alt={f("metric_title")} className="max-w-full max-w-sm" loading="lazy" onError={onErr} />
               </div>
             </div>
           </div>
@@ -149,7 +151,7 @@ export default function WebsiteServiceClient({
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
               <div className="flex justify-center order-last lg:order-first">
-                <img src={aboutImage} alt={f("about2_heading")} className="max-w-full rounded-2xl shadow-lg" loading="lazy" />
+                <img src={aboutImage} alt={f("about2_heading")} className="max-w-full rounded-2xl shadow-lg" loading="lazy" onError={onErr} />
               </div>
               <div>
                 <h2 className="text-3xl sm:text-4xl font-extrabold mb-5 leading-snug" style={{ color: "#200033" }}>{f("about2_heading")}</h2>
@@ -221,14 +223,14 @@ export default function WebsiteServiceClient({
             <p className="text-base leading-relaxed" style={{ color: "#554B4E" }}>{f("cocok_desc")}</p>
           </div>
           <div className="relative rounded-2xl overflow-hidden h-56 mb-4 cursor-pointer group">
-            <img src={COCOK[0].img} alt={COCOK[0].title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+            <img src={COCOK[0].img} alt={COCOK[0].title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" onError={onErr} />
             <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 100%)" }} />
             <div className="absolute bottom-0 left-0 right-0 p-6"><h3 className="text-white font-bold text-xl">{COCOK[0].title}</h3></div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {COCOK.slice(1).map((item) => (
               <div key={item.title} className="relative rounded-2xl overflow-hidden h-48 cursor-pointer group">
-                <img src={item.img} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+                <img src={item.img} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" onError={onErr} />
                 <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 100%)" }} />
                 <div className="absolute bottom-0 left-0 right-0 p-5"><h3 className="text-white font-bold text-lg">{item.title}</h3></div>
               </div>
@@ -270,7 +272,7 @@ export default function WebsiteServiceClient({
                 <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 font-medium px-7 py-3 rounded-lg text-sm transition-opacity hover:opacity-90" style={{ backgroundColor: "#ffffff", color: "#200033" }}>{ts("mini_cta_button")}</a>
               </div>
               <div className="flex-1 flex justify-center lg:justify-end">
-                <img src={ctaImage} alt="Hubungi Alvin Dio Prakosa" className="object-contain w-full max-w-xs lg:max-w-md" loading="lazy" />
+                <img src={ctaImage} alt="Hubungi Alvin Dio Prakosa" className="object-contain w-full max-w-xs lg:max-w-md" loading="lazy" onError={onErr} />
               </div>
             </div>
           </div>

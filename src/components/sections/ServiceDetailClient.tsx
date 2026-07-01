@@ -4,6 +4,8 @@ import { useTranslations } from "next-intl";
 
 const WA = "https://wa.me/6285117257892";
 const BASE = "https://saraya.website/wp-content/uploads/";
+const PLACEHOLDER = "https://placehold.co/600x400/480E6A/ffffff?text=Image";
+const onErr = (e: React.SyntheticEvent<HTMLImageElement>) => { e.currentTarget.src = PLACEHOLDER; };
 
 const FALLBACK_TRUSTED_BY = [
   "2025/06/14.webp","2025/06/9.webp","2025/06/5-1.webp","2025/06/18.webp","2025/06/17.webp",
@@ -47,7 +49,7 @@ export default function ServiceDetailClient({
     desc: ts(`why_${i}_desc`),
   }));
 
-  const PROCESS = processImages.map((img, i) => ({ img, title: f(`process_${i}`) }));
+  const PROCESS = processImages.map((img, i) => ({ img: img || PLACEHOLDER, title: f(`process_${i}`) }));
   const HERO_GALLERY = trustedByImages && trustedByImages.length > 0 ? trustedByImages : FALLBACK_TRUSTED_BY;
 
   return (
@@ -64,7 +66,7 @@ export default function ServiceDetailClient({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 items-center">
             <div className="hidden lg:flex lg:col-span-3 items-center justify-center">
-              <img src={heroImage} alt={f("hero_heading")} className="w-full max-w-lg drop-shadow-xl" loading="eager" />
+              <img src={heroImage} alt={f("hero_heading")} className="w-full max-w-lg drop-shadow-xl" loading="eager" onError={onErr} />
             </div>
             <div className="lg:col-span-2">
               <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight mb-5" style={{ color: "#200033" }}>
@@ -116,7 +118,7 @@ export default function ServiceDetailClient({
               <p className="text-base leading-relaxed" style={{ color: "#554B4E" }}>{f("about_p2")}</p>
             </div>
             <div className="flex justify-center">
-              <img src={aboutImage} alt={f("about_heading")} className="max-w-full rounded-2xl shadow-lg" loading="lazy" />
+              <img src={aboutImage} alt={f("about_heading")} className="max-w-full rounded-2xl shadow-lg" loading="lazy" onError={onErr} />
             </div>
           </div>
         </div>
@@ -132,7 +134,7 @@ export default function ServiceDetailClient({
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {PROCESS.map((step, i) => (
               <div key={i} className="rounded-2xl overflow-hidden border border-gray-100 shadow-sm bg-white">
-                <img src={step.img} alt={step.title} className="w-full aspect-video object-cover" loading="lazy" />
+                <img src={step.img} alt={step.title} className="w-full aspect-video object-cover" loading="lazy" onError={onErr} />
                 <div className="p-5">
                   <span className="text-xs font-bold px-2 py-1 rounded text-white mb-3 inline-block" style={{ backgroundColor: "#480E6A" }}>0{i + 1}</span>
                   <h3 className="font-bold text-base mt-2" style={{ color: "#200033" }}>{step.title}</h3>
@@ -155,7 +157,7 @@ export default function ServiceDetailClient({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
             <div className="flex justify-center order-last lg:order-first">
-              <img src={aboutImage} alt={f("about2_heading")} className="max-w-full rounded-2xl shadow-lg" loading="lazy" />
+              <img src={aboutImage} alt={f("about2_heading")} className="max-w-full rounded-2xl shadow-lg" loading="lazy" onError={onErr} />
             </div>
             <div>
               <p className="text-xs font-semibold mb-4 px-3 py-1 inline-block rounded-full border" style={{ color: "#480E6A", borderColor: "#480E6A" }}>{f("about2_label")}</p>
@@ -197,7 +199,7 @@ export default function ServiceDetailClient({
               <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-7 py-3 rounded-lg text-white font-semibold hover:opacity-90 transition-opacity" style={{ backgroundColor: "#480E6A" }}>{ts("bangun_button")}</a>
             </div>
             <div className="flex justify-center">
-              <img src={aboutImage} alt={ts("bangun_heading")} className="max-w-full rounded-2xl shadow-lg" loading="lazy" />
+              <img src={aboutImage} alt={ts("bangun_heading")} className="max-w-full rounded-2xl shadow-lg" loading="lazy" onError={onErr} />
             </div>
           </div>
         </div>
