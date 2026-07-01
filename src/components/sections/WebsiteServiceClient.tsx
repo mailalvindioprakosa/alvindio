@@ -84,7 +84,7 @@ export default function WebsiteServiceClient({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 items-center">
             <div className="hidden lg:flex lg:col-span-3 items-center justify-center">
-              <img src={heroImage} alt={f("hero_heading")} className="w-full max-w-lg drop-shadow-xl" loading="eager" onError={onErr} />
+              <img src={heroImage} alt={f("hero_heading")} className="w-full max-w-lg drop-shadow-xl rounded-2xl" loading="eager" onError={onErr} />
             </div>
             <div className="lg:col-span-2">
               <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight mb-5" style={{ color: "#200033" }}>{f("hero_heading")}</h1>
@@ -152,7 +152,7 @@ export default function WebsiteServiceClient({
                 <p className="text-base" style={{ color: "rgba(255,255,255,0.5)" }}>{f("metric_journey")}</p>
               </div>
               <div className="flex justify-center lg:justify-end">
-                <img src={heroImage} alt={f("metric_title")} className="max-w-full max-w-sm" loading="lazy" onError={onErr} />
+                <img src={heroImage} alt={f("metric_title")} className="max-w-full max-w-sm rounded-2xl" loading="lazy" onError={onErr} />
               </div>
             </div>
           </div>
@@ -285,7 +285,7 @@ export default function WebsiteServiceClient({
                 <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 font-medium px-7 py-3 rounded-lg text-sm transition-opacity hover:opacity-90" style={{ backgroundColor: "#ffffff", color: "#200033" }}>{ts("mini_cta_button")}</a>
               </div>
               <div className="flex-1 flex justify-center lg:justify-end">
-                <img src={ctaImage} alt="Hubungi Alvin Dio Prakosa" className="object-contain w-full max-w-xs lg:max-w-md" loading="lazy" onError={onErr} />
+                <img src={ctaImage} alt="Hubungi Alvin Dio Prakosa" className="object-contain w-full max-w-xs lg:max-w-md rounded-2xl" loading="lazy" onError={onErr} />
               </div>
             </div>
           </div>
