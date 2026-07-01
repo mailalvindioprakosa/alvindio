@@ -58,7 +58,7 @@ export default function CTABanner({
                 alt="CTA illustration"
                 width={500}
                 height={400}
-                className="object-contain w-full max-w-xs lg:max-w-md"
+                className="object-contain w-full max-w-xs lg:max-w-md rounded-2xl"
                 unoptimized
               />
             </div>

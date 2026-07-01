@@ -38,7 +38,7 @@ export default function WhyUs({
               alt="Mengapa Alvin Dio Prakosa"
               width={520}
               height={440}
-              className="object-contain w-full max-w-xs lg:max-w-md"
+              className="object-contain w-full max-w-xs lg:max-w-md rounded-2xl"
               unoptimized
             />
           </div>

@@ -194,7 +194,7 @@ export default function WebsiteServiceClient({
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {displayed.map((item, i) => (
               <div key={i} className="rounded-xl overflow-hidden relative group cursor-pointer">
-                <img src={item.url} alt={item.caption ?? ""} className="w-full aspect-video object-cover" loading="lazy" />
+                <img src={item.url} alt={item.caption ?? ""} className="w-full aspect-video object-cover rounded-xl" loading="lazy" />
                 <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
                   <span className="text-sm font-bold text-white">{item.caption}</span>
                 </div>
@@ -262,7 +262,7 @@ export default function WebsiteServiceClient({
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {[0, 1, 2].map((i) => (
               <div key={i} className="rounded-2xl overflow-hidden border border-gray-100 shadow-sm bg-white">
-                <img src={DEFAULT_PROCESS_IMGS[i]} alt={ts(`process_${i}`)} className="w-full aspect-video object-cover" loading="lazy" onError={onErr} />
+                <img src={DEFAULT_PROCESS_IMGS[i]} alt={ts(`process_${i}`)} className="w-full aspect-video object-cover rounded-t-2xl" loading="lazy" onError={onErr} />
                 <div className="p-5">
                   <span className="text-xs font-bold px-2 py-1 rounded text-white mb-3 inline-block" style={{ backgroundColor: "#480E6A" }}>0{i + 1}</span>
                   <h3 className="font-bold text-base mt-2" style={{ color: "#200033" }}>{ts(`process_${i}`)}</h3>
